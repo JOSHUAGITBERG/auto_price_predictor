@@ -15,10 +15,22 @@ Low mileage is by far the strongest price driver, followed by body style and vin
 Coupes are the highest value among smaller cars
 Minivans have the lowest resale price
 
+https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/price_by_body_style.png
+
+https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/price_by_condition.png 
+
+https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/price_by_mileage.png 
+
 
 Methodology:
 
-     We started with a dataset of 420k sales, which we widdled down to ~200k by the time we removed incomplete and irrelevant data data.  We measured feature correlation in two independent ways. First, we simply ran correlation against the original, unscrubbed dataset.  Then, once we identified a regression model, we scrubbed the data and measured feature correlation again.  The optimized data and regression analysis emphasized body style and manufacturer slightly more than vintage, relative to the unscrubbed data.  
+     We started with a dataset of 420k sales, which we widdled down to ~200k by the time we removed incomplete and irrelevant data data.  We measured feature correlation in two independent ways. First, we simply ran correlation against the original, unscrubbed dataset, which produced the following feature weights:  
+
+https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/Relative_Feature_Weights_Raw.png
+
+Then, once we identified a regression model, we scrubbed the data and measured feature correlation again.  The optimized data and regression analysis emphasized body style and manufacturer slightly more than vintage, relative to the unscrubbed data.  
+
+https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/Relative_Feature_Weights_Scrubbed.png
 
 Modeling:
 
