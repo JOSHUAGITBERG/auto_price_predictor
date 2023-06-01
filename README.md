@@ -1,6 +1,6 @@
 Overview:  
 
-The following is an analysis of a dataset of ~400k car purchases, which can be found in the data directory of this repository. Once the data was cleansed of nulls and incomplete entries, we generated several predictive models, which estimated price based on available feature information.  We determined which model was most accurate by running a subset of the actual data through the model, and comparing model generated price predictions to actual prices.  The following analysis is based on features identified by our supervised learning model.
+The following is an analysis of a dataset of ~400k car purchases, which can be found in the data directory of this repository. Once the data was cleansed of nulls and incomplete entries, we generated several predictive models, which estimated price based on available feature information.  We determined which model was most accurate by running a subset of the actual data through the model, and comparing model generated price predictions to actual prices.  Recommendations focus on the features identified by our supervised learning model.
 
 Summary Analysis:
 
