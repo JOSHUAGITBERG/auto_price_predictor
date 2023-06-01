@@ -12,9 +12,11 @@ Other than specialty vehicles, coupes and pickups are the highest price vehicles
 
 ![alt text](https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/Median_Price_By_Type.png)
 
-Either avoid fair condition vehicles, or improve their condition before selling
+Note the wide density of low prices for cars in fair condition. Either avoid fair condition vehicles, or improve their condition before selling.
 
 ![alt text](https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/price_by_condition.png)
+
+Prices clearly trend lower as cars move from new or low mileage towards higher mileage.  In this graph, "moderate" represents 50-100k miles, and extremely high represents over 200k miles.  
 
 ![alt text](https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/price_by_mileage.png)
 
@@ -22,8 +24,10 @@ Other Trends:
 
 Vintage Analysis:
 
-Note that prices drop after a car is ten years old, and start to rise again at around 50 years old.  
-Prices started dropping in 2021, probably due to Covid and the stock market crash
+Note that prices drop roughly $2k for each year from 2020 to roughly 2005. This is an indication that cars lose value each year, plateauing to a floor after 15 years. 
+Price start to climb modestly each year after they are 30 years old, and jump by roughly 50%  more significantly once they are 50 years old.  
+
+Vehicle vintage Data also shows that prices started dropping in 2021, probably due to Covid and the market crash.
 
 ![alt text](https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/Price_By_Year.png)
 
@@ -32,7 +36,7 @@ Condition  Effects on Highly Valued Vehicles:
 The following charts show condition affecting trucks, coupes and antiques similarly
 “Like new” trucks do not retain value relative to “new”
 
-![alt text](https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/Price_By_Year.png)
+![alt text](https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/Cohort_Price_By_Conditions.png)
 
 
 
