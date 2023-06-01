@@ -33,34 +33,45 @@ Vehicle vintage Data also shows that prices started dropping in 2021, probably d
 
 Condition  Effects on Highly Valued Vehicles:
 
-The following charts show condition affecting trucks, coupes and antiques similarly
-“Like new” trucks do not retain value relative to “new”
+The following charts show the relative distribution of prices for cohorts of trucks, coupes and antique cars, sorted by condition.
+
+The data shows the following tends:
+
+Condition affects most cohorts similarly- with the following exceptions:
+
+“Like new” trucks do not retain value as well as coupes and antiques (this requires further analysis)
+Trucks in "fair" and "good"  condition retain their value better than coupes or antiques
+Antiques in "new" condition have a relativelt high and narrow interquartile range
+
 
 ![alt text](https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/Cohort_Price_By_Conditions.png)
 
 
-
-
 Methodology:
 
-     We started with a dataset of 420k sales, which we widdled down to ~200k by the time we removed incomplete and irrelevant data.  We measured feature correlation in two independent ways. First, we simply ran correlation against the original, unscrubbed dataset, which produced the following feature weights:  
+     We started with a dataset of 420k sales, which we widdled down to ~200k by the time we removed incomplete and irrelevant data.  
+We measured feature correlation in two independent ways. First, we simply ran correlation against the original, unscrubbed dataset, which produced the following feature weights:  
 
-![alt text](https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/Relative_Feature_Weights_Raw.png)
+![alt text](https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/Initial_Feature_Weight.png)
 
-Then, once we identified a regression model, we scrubbed the data and measured feature correlation again.  The optimized data and regression analysis emphasized body style and manufacturer slightly more than vintage, relative to the unscrubbed data.  
+Then, once we identified the most accurate regression model, random forest,  we scrubbed the data and measured feature correlation again.  
+The optimized data and regression analysis emphasized body style and manufacturer slightly more than vintage, relative to the unscrubbed data.  
 
-![alt text](https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/Relative_Feature_Weights_Scrubbed.png)
+![alt text](https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/Relative_Feature_Weights.png)
 
 Modeling:
 
-We ran Ridge, Lasso, Linear Regression and Random Forest Regressors.  Random Forest Regressor had the lowest mean absolute error (~$3k), and generated predictions with above 75% accuracy.  We used our model to generate the following chart of feature weights.  We can provide the model upon request if you need a price generator in the future. 
+We standardized the data and ran Ridge, Lasso, Linear and Random Forest Regressors.  Random Forest Regressor had the lowest mean absolute error (~$3k), and generated predictions with 75%+ accuracy.  
+Our model generated the relateive feature weights.  We can provide the model upon request if you need a price generator in the future. 
 
 ![alt text](https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/Relative_Feature_Weights.png)
 
 Other Assumptions:
- Cars with a sales price of < $500 were removed from the dataset.  There were many cars in good condition listed as low as $0 or $1.  We assume these are either in-family sales or donations, which don’t reflect the active used car sales market.  We arbitrarily used a $500 floor to remove outliers and focus on profitable sales. 
-Ferrari data was removed from the manufacturer chart because the high prices throw off the scale.
+Sales with incomplete data were removed from the dataset. 
+There were many sales with very low sales prices, including sales of new cars for $0 or $1. We assume these are either in-family sales or donations which don't reflet market sales. We arbitrarily selected a $500 floor 
+which removed such outliers.  Ideally this should allow us to focus on profitable sales.
+There were several multi-million dollar sales records.  We removed the highest .1% of sales to eliminate these high priced outliers.    
 All cars were assumed to be front wheel drive unless otherwise noted
-Paint Color and engine cylinder information was too spares to use
-Cars will be sold in the state or region they are acquired in
+Paint Color and engine cylinder information was too sparse to use
+Cars will be sold in the state or region they are acquiredn
 
