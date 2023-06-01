@@ -6,7 +6,7 @@ Summary Analysis:
 
 If you want maximize your profits:
 The primary drivers of price, in order of priority, are mileage and year, followed by body style and manufacturer:
-(https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/Relative_Feature_Weights.png
+(https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/Relative_Feature_Weights.png)
 Other than specialty vehicles, coupes and pickups are the highest price vehicles.  Minivans are the least expensive.
 ![alt text](https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/pricebybodytype.png)
 
