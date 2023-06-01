@@ -4,7 +4,6 @@ The following is an analysis of a dataset of ~400k car purchases, which can be f
 
 Summary Analysis:
 
-If you want maximize your profits:
 The primary drivers of price, in order of priority, are mileage and year, followed by body style and manufacturer:
 
 ![alt text](https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/Relative_Feature_Weights.png)
