@@ -10,7 +10,7 @@ The primary drivers of price, in order of priority, are mileage and year, follow
 
 Other than specialty vehicles, coupes and pickups are the highest price vehicles.  Minivans are the least expensive.
 
-![alt text](https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/Median_Price_by_Type.png)
+![alt text](https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/Median_Price_By_Type.png)
 
 Either avoid fair condition vehicles, or improve their condition before selling
 
