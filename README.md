@@ -1,30 +1,43 @@
 Overview:  
 
-The following is a data analysis of ~400k car purchases.  Our goal is to test several predictive models to understand the relative factors of car prices.  While is it intuitive that low mileage, mint condition vehicles will demand higher prices, it becomes more complex when we compare used cars of varying condition, milage, manufacturer and body style.  
-
+The following is a data analysis of ~400k car purchases.  Once we cleansed the data, we generated several predictive models, which estimated price based on available feature information.  We determined which model was most accurate by running a subset of the actual data through the model, and comparing model generated price predictions to actual prices.  The following analysis is based on features identified by our supervised learning model.
 
 Summary Analysis:
 
 If you want maximize your profits:
-Focus on trucks and pickups
-Aim for low mileage vehicles
-Either avoid fair condition vehicles, or improve their condition before selling
-Avoid minivans
-Why?
-Low mileage is by far the strongest price driver, followed by body style and vintage.  For example, a brand new pickup truck would consistently demand a high sale price.
-Coupes are the highest value among smaller cars
-Minivans have the lowest resale price
+The primary drivers of price, in order of priority, are mileage and year, followed by body style and manufacturer:
+(https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/Relative_Feature_Weights.png
+Other than specialty vehicles, coupes and pickups are the highest price vehicles.  Minivans are the least expensive.
+![alt text](https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/pricebybodytype.png)
 
-![alt text](https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/price_by_body_style.png)
+Either avoid fair condition vehicles, or improve their condition before selling
 
 ![alt text](https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/price_by_condition.png)
 
 ![alt text](https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/price_by_mileage.png)
 
+Other Trends:
+
+Vintage Analysis:
+
+Note that prices drop after a car is ten years old, and start to rise again at around 50 years old.  
+Prices started dropping in 2021, probably due to Covid and the stock market crash
+
+![alt text](https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/Price_By_Year.png)
+
+Condition  Effects on Highly Valued Vehicles:
+
+The following charts show condition affecting trucks, coupes and antiques similarly
+“Like new” trucks do not retain value relative to “new”
+
+![alt text](https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/Price_By_Year.png)
+
+
+
 
 Methodology:
 
-     We started with a dataset of 420k sales, which we widdled down to ~200k by the time we removed incomplete and irrelevant data data.  We measured feature correlation in two independent ways. First, we simply ran correlation against the original, unscrubbed dataset, which produced the following feature weights:  
+     We started with a dataset of 420k sales, which we widdled down to ~200k by the time we removed incomplete and irrelevant data.  We measured feature correlation in two independent ways. First, we simply ran correlation against the original, unscrubbed dataset, which produced the following feature weights:  
 
 ![alt text](https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/Relative_Feature_Weights_Raw.png)
 
@@ -34,12 +47,13 @@ Then, once we identified a regression model, we scrubbed the data and measured f
 
 Modeling:
 
-We ran Ridge, Lasso, Linear Regression and Random Forest Regressors.  Random Forest Regressor had the lowest mean absolute error (~$3k).  We used our model to generate the following chart of feature weights.  We can provide the model upon request if you need a price generator in the future. 
+We ran Ridge, Lasso, Linear Regression and Random Forest Regressors.  Random Forest Regressor had the lowest mean absolute error (~$3k), and generated predictions with above 75% accuracy.  We used our model to generate the following chart of feature weights.  We can provide the model upon request if you need a price generator in the future. 
 
+![alt text](https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/Relative_Feature_Weights.png)
 
-Assumptions:
- Cars with a sales price of < $2 were removed from the dataset.  We assume these are either in-family sales or donations, which don’t reflect the active used car sales market.
-Ferrari data was removed because the high prices throw off the scale of the charts.  A dedicated Ferrari price predictor and analysis can be made available using the available models on demand.
+Other Assumptions:
+ Cars with a sales price of < $500 were removed from the dataset.  There were many cars in good condition listed as low as $0 or $1.  We assume these are either in-family sales or donations, which don’t reflect the active used car sales market.  We arbitrarily used a $500 floor to remove outliers and focus on profitable sales. 
+Ferrari data was removed from the manufacturer chart because the high prices throw off the scale.
 All cars were assumed to be front wheel drive unless otherwise noted
 Paint Color and engine cylinder information was too spares to use
 Cars will be sold in the state or region they are acquired in
