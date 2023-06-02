@@ -4,10 +4,10 @@ The following is an analysis of a dataset of ~400k car purchases, which can be f
 
 Actionable Recommendations :
 
-Seek new and low mileage vehicles
-Focus on trucks and coupes
-Avoid vehicles in fair condition
-Avoid minivans
+- Seek new and low mileage vehicles
+- Focus on trucks and coupes
+- Avoid vehicles in fair condition
+- Avoid minivans
 
 Full Analysis:
 
