@@ -73,7 +73,7 @@ Condition affects most cohorts similarly- with the following exceptions:
 
 Methodology:
 
-     We started with a dataset of 420k sales, which we whittled down to 190k after we removed
+We started with a dataset of 420k sales, which we whittled down to 190k after we removed
 incomplete data, irrelevant data, redundant data and outliers. 
 
 Once we identified the most accurate regression model, random forest, we scrubbed the data and measured feature correlation, as shown at the top of this page.
