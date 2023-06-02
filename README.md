@@ -3,6 +3,7 @@ Overview:
 The following is an analysis of a dataset of ~400k car purchases, which can be found in the data directory of this repository. Once the data was cleansed, we generated several predictive models, which estimated price based on available feature information.  We determined which model was most accurate by creating a test dataset, and comparing model generated price predictions to actual prices.  The following recommendations focus on the features identified by our supervised learning model.
 
 Actionable Recommendations :
+
 Seek new and low mileage vehicles
 Focus on trucks and coupes
 Avoid vehicles in fair condition
