@@ -25,7 +25,9 @@ The following graph illustrates the impact of mileage on price.  Note the higher
 
 Year/Vintage:
 
-The following chart shows that prices drop roughly $2k for each year from 2020 to roughly 2005. Cars lose roughly $2k in value each year, plateauing to a floor after 15 years. Price starts to climb modestly each year after they are 30 years old, and jumps again by roughly 50% once they are 50 years old.
+The following chart shows that cars lose roughly $2k in value each year, plateauing to a floor after 15 years. 
+
+Prices start to climb modestly each year after they are 30 years old, and jump again by roughly 50% once they are 50 years old.
 
 Interestingly, the chart also shows a price drop in 2021, likely triggered by Covid and macroeconomic conditions.
 
@@ -41,7 +43,7 @@ The following chart shows that, other than specialty vehicles, coupes and pickup
 
 Manufacturer:
 
-The effect of manufacturer is pretty straightforward.  We know intuitively that a Ferrari should cost more than a Saturn, and in fact the median price as shown on the chart below is 10x. However, Ford and Chevrolet represent more than 25% of the sale records. The higher distribution of similar brands dampens the effect of expensive boutique vehicles.
+The price effect of a manufacturer is pretty straightforward.  We know intuitively that a Ferrari should cost more than a Saturn, and in fact the median price as shown on the chart below reflects a 10x difference between the two. However, Ford and Chevrolet represent more than 25% of the sales records. The higher distribution of similar brands dampens the effect of expensive boutique vehicles.
 
 ![alt text](https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/manu_dist.png)
 
@@ -49,7 +51,7 @@ The effect of manufacturer is pretty straightforward.  We know intuitively that 
 
 Condition
 
-Note the wide density of low prices for cars in fair condition. Either avoid fair condition vehicles, or improve their condition before selling.
+Note the wide density of low prices for cars in fair condition.  This is why we recommend to either avoid fair condition vehicles, or improve their condition before selling.
 
 ![alt text](https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/price_by_condition.png)
 
@@ -63,35 +65,37 @@ The data shows the following tends:
 
 Condition affects most cohorts similarly- with the following exceptions:
 
-“Like new” trucks do not retain value as well as coupes and antiques (this requires further analysis)
-Trucks in "fair" and "good"  condition retain their value better than coupes or antiques
-Antiques in "new" condition have a relativelt high and narrow interquartile range
-
+- “Like new” trucks do not retain value as well as coupes and antiques (this requires further analysis)
+- Trucks in "fair" and "good"  condition retain their value better than coupes or antiques
+- Antiques in "new" condition have a relatively high and narrow interquartile range
 
 ![alt text](https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/Cohort_Price_By_Conditions.png)
 
-
 Methodology:
 
-     We started with a dataset of 420k sales, which we whittled down to 190k once we removed
+     We started with a dataset of 420k sales, which we whittled down to 190k after we removed
 incomplete data, irrelevant data, redundant data and outliers. 
 
-
-Once we identified the most accurate regression model, random forest,  we scrubbed the data and measured feature correlation, as shown at the top of this page.
+Once we identified the most accurate regression model, random forest, we scrubbed the data and measured feature correlation, as shown at the top of this page.
 
 Modeling:
 
 We standardized the data and ran Ridge, Lasso, Linear and Random Forest Regressors.  Random Forest Regressor had the lowest mean absolute error (~$3k), and generated predictions with 75%+ accuracy.
 
-Our model generated the relative feature weights.  We can use the model to provide a price generator in the future upon request.
+The code for modeling can be found in the Jupyter workbook auto_price_predictor.ipynb
+included in this repository.
+
+We can also use the model to provide a price generator in the future upon request.
 
 Other Assumptions:
-Sales with incomplete data were removed from the dataset.
-There were many sales with very low sales prices, including sales of new cars for $0 or $1. We assume these are either in-family sales or donations which don't reflect market sales. We arbitrarily selected a $500 floor which removed such outliers.  
-There were several multi-million dollar sales records which seemed inaccurate.  We removed the highest .1% of sales to eliminate these high priced outliers.
-All cars were assumed to be front wheel drive unless otherwise noted
-Paint Color and engine cylinder information was too sparse to use
-We did not track location data under the assumption that cars will be sold in the state or region they are acquired
+
+- Sales with incomplete data were removed from the dataset.
+- There were many sales with very low sales prices, including sales of new cars for $0 or $1.
+ We assume these are either in-family sales or donations which don't reflect market sales. We arbitrarily selected a $500 floor which removed such outliers.  
+- There were several multi-million dollar sales records which seemed inaccurate.  We removed the highest .1% of sales to eliminate these high priced outliers.
+- All cars were assumed to be front wheel drive unless otherwise noted
+- Paint Color and engine cylinder information was too sparse to use
+- We did not track location data under the assumption that cars will be sold in the state or region they are acquired
 
 
 
