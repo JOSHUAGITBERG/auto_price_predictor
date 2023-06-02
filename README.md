@@ -72,7 +72,8 @@ Antiques in "new" condition have a relativelt high and narrow interquartile rang
 
 Methodology:
 
-     We started with a dataset of 420k sales, which we whittled down to 190k by the time we removed incomplete data, irrelevant data, redundant data and outliers. 
+     We started with a dataset of 420k sales, which we whittled down to 190k once we removed
+incomplete data, irrelevant data, redundant data and outliers. 
 
 
 Once we identified the most accurate regression model, random forest,  we scrubbed the data and measured feature correlation, as shown at the top of this page.
