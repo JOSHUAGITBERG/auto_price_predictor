@@ -17,12 +17,6 @@ The primary drivers of price, in order of priority, are mileage and year, follow
 
 Below we will break down findings on each feature.
 
-Mileage:
-
-The following graph illustrates the impact of mileage on price.  Note the higher distribution of high prices for new and low mileage cars.  In this graph, "moderate" mileage represents 50-100k miles, and extremely high represents over 200k miles.
-
-![alt text](https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/price_by_mileage.png)
-
 Year/Vintage:
 
 The following chart shows that cars lose roughly $2k in value each year, plateauing to a floor after 15 years. 
@@ -32,6 +26,12 @@ Prices start to climb modestly each year after they are 30 years old, and jump a
 Interestingly, the chart also shows a price drop in 2021, likely triggered by Covid and macroeconomic conditions.
 
 ![alt text](https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/Price_By_Year.png)
+
+Odometer/Mileage:
+
+The following graph illustrates the impact of mileage on price.  Note the higher distribution of high prices for new and low mileage cars.  In this graph, "moderate" mileage represents 50-100k miles, and extremely high represents over 200k miles.
+
+![alt text](https://github.com/JOSHUAGITBERG/auto_price_predictor/blob/main/images/price_by_mileage.png)
 
 
 
